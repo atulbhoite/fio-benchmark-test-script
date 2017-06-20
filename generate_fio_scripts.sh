@@ -495,7 +495,7 @@ echo "Changing permissions on all shell scripts..."
 chmod +x ./fio*.sh
 
 echo "Creating a run all fio scripts bash file..."
-cat  > runAllFioTest.sh << EOL
+cat  > runAllFioTests.sh << EOL
 
 #Read-to-Write: 100/0 Sequential
 ./fio_4_4_1_100_0_seqread.sh
@@ -901,6 +901,9 @@ cat  > runAllFioTest.sh << EOL
 EOL
 
 echo "Changing permissions on run shell scripts..."
-chmod +x ./runAllFioTest.sh
+chmod +x ./runAllFioTests.sh
+
+# run the scripts
+#./runAllFioTests.sh &
 
 exit 0
