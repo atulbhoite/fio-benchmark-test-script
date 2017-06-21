@@ -970,7 +970,4 @@ EOL
 echo "Changing permissions on run shell scripts..."
 chmod +x ./runAllFioTests.sh
 
-# run the scripts
-#./runAllFioTests.sh &
-
 exit 0
