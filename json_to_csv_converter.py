@@ -14,7 +14,7 @@ def convert_json_to_csv():
     fname.close()
     log.debug("Ordered filenames: %s", ordered_filenames)
 
-    csvfile = open("../fio_results/collatedresults.csv", "a")
+    csvfile = open("../fio_results/fio_benchmarks.csv", "a")
     csvrowheader = ", ".join(
         ["block-size", "size", "number of threads", "random/sequential", "read/write percentage", "read_bw",
          "read_iops", "read_lat", "write_bw", "write_iops", "write_lat"]) + '\n'
