@@ -10,7 +10,7 @@ PID=`cat ./runAllFioTests.pid`
 while ps -p $PID > /dev/null; do
    echo "$PID is running"
    #sleep 10 minutes
-   sleep 10*60
+   sleep 600
 done
 
 echo "$PID has completed. Running post processing of results..."
