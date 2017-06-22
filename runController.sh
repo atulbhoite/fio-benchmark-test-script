@@ -14,6 +14,7 @@ while ps -p $PID > /dev/null; do
 done
 
 echo "$PID has completed. Running post processing of results..."
+./copy_files_to_home_dir.sh
 python ./json_to_csv_converter.py
 
 exit 0
