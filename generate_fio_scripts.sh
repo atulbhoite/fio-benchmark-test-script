@@ -564,6 +564,8 @@ cat  > runAllFioTests.sh << EOL
 ./fio_1_100_256_100_0_seqread.sh
 ./fio_1_100_1000_100_0_seqread.sh
 
+rm -rf /mnt/testCinder01/testfile.*
+
 #Read-to-Write: 100/0 Random
 ./fio_4_4_1_100_0_randread.sh
 ./fio_4_4_16_100_0_randread.sh
@@ -630,6 +632,8 @@ cat  > runAllFioTests.sh << EOL
 ./fio_1_100_64_100_0_randread.sh
 ./fio_1_100_256_100_0_randread.sh
 ./fio_1_100_1000_100_0_randread.sh
+
+rm -rf /mnt/testCinder01/testfile.*
 
 #Read-to-Write: 80/20 Random
 ./fio_4_4_1_80_20_randrw.sh
@@ -698,6 +702,8 @@ cat  > runAllFioTests.sh << EOL
 ./fio_1_100_256_80_20_randrw.sh
 ./fio_1_100_1000_80_20_randrw.sh
 
+rm -rf /mnt/testCinder01/testfile.*
+
 #Read-to-Write: 50/50 Random
 ./fio_4_4_1_50_50_randrw.sh
 ./fio_4_4_16_50_50_randrw.sh
@@ -764,6 +770,8 @@ cat  > runAllFioTests.sh << EOL
 ./fio_1_100_64_50_50_randrw.sh
 ./fio_1_100_256_50_50_randrw.sh
 ./fio_1_100_1000_50_50_randrw.sh
+
+rm -rf /mnt/testCinder01/testfile.*
 
 #Read-to-Write: 80/20 Random
 ./fio_4_4_1_20_80_randrw.sh
@@ -832,6 +840,8 @@ cat  > runAllFioTests.sh << EOL
 ./fio_1_100_256_20_80_randrw.sh
 ./fio_1_100_1000_20_80_randrw.sh
 
+rm -rf /mnt/testCinder01/testfile.*
+
 #Read-to-Write: 0/100 Random
 ./fio_4_4_1_0_100_write.sh
 ./fio_4_4_16_0_100_write.sh
@@ -898,6 +908,8 @@ cat  > runAllFioTests.sh << EOL
 ./fio_1_100_64_0_100_write.sh
 ./fio_1_100_256_0_100_write.sh
 ./fio_1_100_1000_0_100_write.sh
+
+rm -rf /mnt/testCinder01/testfile.*
 
 #Read-to-Write: 0/100 Sequential
 ./fio_4_4_1_0_100_seqwrite.sh
