@@ -24,12 +24,12 @@ def convert_json_to_csv():
         log.debug("filename: %s", filename)
 
         # try to get the individual file details from the filename for seq read files
-        pattern = "(\d{1,})_(.{1,})_(.{1,})_(.{1,})_(.{1,})_(seqread|randread|randrw|write|seqwrite)_output.txt$"
+        pattern = "(\d{1,})_(.{1,})_(.{1,})_(.{1,})_(.{1,})_(read|randread|randrw|randwrite|write)_output.txt$"
 
         with open(("../fio_results/" + filename).rstrip()) as data_file:
             data = json.load(data_file)
 
-            if filename.__contains__("seqread") or filename.__contains__("randread"):
+            if filename.__contains__("read") or filename.__contains__("randread"):
                 groups = re.findall(pattern, filename)
                 log.debug("groups: %s", groups)
                 read_bw = str(data["jobs"][0]["read"]["bw"])
@@ -40,9 +40,9 @@ def convert_json_to_csv():
                      read_iops, read_lat]) + '\n'
 
             else:
-                read_bw = str(data["jobs"][0]["read"]["bw"])
                 groups = re.findall(pattern, filename)
                 log.debug("groups: %s", groups)
+                read_bw = str(data["jobs"][0]["read"]["bw"])
                 read_iops = str(data["jobs"][0]["read"]["iops"])
                 read_lat = str(data["jobs"][0]["read"]["clat"]["mean"])
                 write_bw = str(data["jobs"][0]["write"]["bw"])
