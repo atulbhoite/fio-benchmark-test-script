@@ -82,4 +82,6 @@ do
     done
 done
 
+# ensure test file is executable
+chmod +x runAllFioTests.sh
 exit 0
