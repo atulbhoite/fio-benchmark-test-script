@@ -24,7 +24,7 @@ def convert_json_to_csv():
         log.debug("filename: %s", filename)
 
         # try to get the individual file details from the filename for seq read files
-        pattern = "(\d{1,})_(.{1,})_(.{1,})_(.{1,})_(.{1,})_(read|randread|randrw|randwrite|write)_output.txt$"
+        pattern = "(\d{1,6}\D\D)_(.{1,6})_(.{1,6})_(.{1,6})_(read|randread|randrw|randwrite|write)_output.txt$"
 
         with open(("../fio_results/" + filename).rstrip()) as data_file:
             data = json.load(data_file)
