@@ -35,8 +35,9 @@ def convert_json_to_csv():
                 read_bw = str(data["jobs"][0]["read"]["bw"])
                 read_iops = str(data["jobs"][0]["read"]["iops"])
                 read_lat = str(data["jobs"][0]["read"]["clat"]["mean"])
+                read_write_percent = str(100 - int(groups[0][3]))
                 csvrow = ", ".join(
-                    [groups[0][0], groups[0][1], groups[0][2], groups[0][5], groups[0][3] + "/" + groups[0][4], read_bw,
+                    [groups[0][0], groups[0][1], groups[0][2], groups[0][4], groups[0][3] + "/" + read_write_percent, read_bw,
                      read_iops, read_lat]) + '\n'
 
             else:
@@ -48,8 +49,9 @@ def convert_json_to_csv():
                 write_bw = str(data["jobs"][0]["write"]["bw"])
                 write_iops = str(data["jobs"][0]["write"]["iops"])
                 write_lat = str(data["jobs"][0]["write"]["clat"]["mean"])
+                read_write_percent = str(100 - int(groups[0][3]))
                 csvrow = ", ".join(
-                    [groups[0][0], groups[0][1], groups[0][2], groups[0][5], groups[0][3] + "/" + groups[0][4],
+                    [groups[0][0], groups[0][1], groups[0][2], groups[0][4], groups[0][3] + "/" + read_write_percent,
                      read_bw, read_iops, read_lat, write_bw, write_iops, write_lat]) + '\n'
 
             csvfile.write(csvrow)
