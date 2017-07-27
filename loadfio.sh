@@ -1,7 +1,14 @@
 #! /bin/bash
 
 echo "Running loadfio.sh... "
-cd fio-benchmark-test-script;
+
+echo "Make scripts executable... "
+cd fio-benchmark-test-script/
+chmod +x generate_fio_scripts.sh
+chmod +x mount_cinder_volume.sh
+chmod +x copy_files_to_home_dir.sh
+chmod +x runController.sh
+
 
 if [ -z "${FIO_TEST_RUNTIME}" ]; then
     echo "runtime for test is not set using the variable FIO_TEST_RUNTIME, running default time of 30 seconds";
