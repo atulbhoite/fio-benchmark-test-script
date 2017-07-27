@@ -1,6 +1,7 @@
 #! /bin/bash
 
 echo "Running loadfio.sh... "
+cd fio-benchmark-test-script;
 
 if [ -z "${FIO_TEST_RUNTIME}" ]; then
     echo "runtime for test is not set using the variable FIO_TEST_RUNTIME, running default time of 30 seconds";
@@ -13,5 +14,5 @@ fi
 # Ensure script is executable.
 chmod +x runAllFioTests.sh
 
-./mount_cinder_volume.sh
-./runController.sh
+sudo ./mount_cinder_volume.sh
+sudo ./runController.sh
