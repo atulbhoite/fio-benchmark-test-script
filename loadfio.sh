@@ -21,5 +21,5 @@ fi
 # Ensure script is executable.
 chmod +x runAllFioTests.sh
 
-sudo ./mount_cinder_volume.sh
+sudo ./mount_cinder_volume.sh &>> command_results.txt
 sudo ./runController.sh
