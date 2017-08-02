@@ -4,6 +4,7 @@ echo "Running loadfio.sh... "
 
 echo "Make scripts executable... "
 cd fio-benchmark-test-script/
+git checkout iad_public
 chmod +x generate_fio_scripts.sh
 chmod +x mount_cinder_volume.sh
 chmod +x copy_files_to_home_dir.sh
